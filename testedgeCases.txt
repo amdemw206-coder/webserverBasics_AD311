@@ -1,0 +1,27 @@
+Test Cases: 
+
+- (i) Homepage 
+	- Request URL: http://localhost:3000/
+	- Expected Behavior: Server reads home.html and serves it.
+
+- (ii) About Page 
+	- Request URL: http://localhost:3000/about
+	- Expected Behavior: Server sends the simple text response.
+
+- (iii) Port Access 
+	- Request URL: http://localhost:3000
+	- Expected Behavior:Server handles the request without an explicit trailing slash.
+
+Edge Cases: 
+
+- (i) Invalid Route 
+	- Request URL: http://localhost:3000/random-xyz
+	- Expected Behavior: Server hits the default 404 case.
+
+- (ii) Case Sensitivity 
+	- Request URL: http://localhost:3000/ABOUT
+	- Expected Behavior: Node routes are case-sensitive by default.
+
+- (iii) Malformed Path
+	- Request URL: http://localhost:3000//
+	- Expected Behavior:Server should gracefully return the 404 message without crashing.
